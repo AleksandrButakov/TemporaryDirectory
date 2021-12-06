@@ -92,9 +92,22 @@ public class TestTempRSHB {
         // указываем какой скрипт необходимо выполнить. Необходимо почистить все сессионные данные, которые
         // которые находятся в определенном окне
         javascriptExecutor.executeScript("window.sessionStorage.clear()");
-
         createPause();
-        driver.close();
+
+        // ссылка на кнопку понятно
+        //button[@class='cookie-consent__submit-button button button__white']
+        element = driver.findElement(By.xpath("//button[@class='cookie-consent__submit-button button button__white']"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+
+        // введем размер платежа. XPath на поле
+        //*[@id="root"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.clear();
+
+
+        // driver.close();
     }
 
     public void createPause() {
