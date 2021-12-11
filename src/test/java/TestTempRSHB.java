@@ -107,7 +107,7 @@ public class TestTempRSHB {
         element.clear();
 
 
-        // driver.close();
+        driver.close();
     }
 
     public void createPause() {
