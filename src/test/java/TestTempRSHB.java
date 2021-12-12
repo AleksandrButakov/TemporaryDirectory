@@ -101,7 +101,7 @@ public class TestTempRSHB {
         element.click();
 
         // введем размер платежа. XPath на поле
-        //*[@id="root"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input
+        //*[@id="root"]/div[1]пше /div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.clear();
