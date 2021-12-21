@@ -106,7 +106,6 @@ public class TestTempRSHB {
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.clear();
 
-
         driver.close();
     }
 
