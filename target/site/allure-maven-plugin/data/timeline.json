@@ -1,0 +1,72 @@
+{
+  "statistic" : {
+    "failed" : 0,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1,
+    "unknown" : 0,
+    "total" : 1
+  },
+  "time" : {
+    "minDuration" : 28159,
+    "maxDuration" : 28159,
+    "sumDuration" : 28159,
+    "start" : 1640150675794,
+    "stop" : 1640150703953,
+    "duration" : 28159
+  },
+  "children" : [ {
+    "uid" : "4bbca267e16cf5dc",
+    "name" : "DESKTOP-ME9VRNQ",
+    "time" : {
+      "minDuration" : 28159,
+      "maxDuration" : 28159,
+      "sumDuration" : 28159,
+      "start" : 1640150675794,
+      "stop" : 1640150703953,
+      "duration" : 28159
+    },
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "type" : "TestGroupNode",
+    "children" : [ {
+      "uid" : "43f533d29b283ea6",
+      "name" : "11572@DESKTOP-ME9VRNQ.main(1)",
+      "time" : {
+        "minDuration" : 28159,
+        "maxDuration" : 28159,
+        "sumDuration" : 28159,
+        "start" : 1640150675794,
+        "stop" : 1640150703953,
+        "duration" : 28159
+      },
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 1
+      },
+      "type" : "TestGroupNode",
+      "children" : [ {
+        "uid" : "4e57b94fd93a6ec1",
+        "name" : "webTest()",
+        "time" : {
+          "start" : 1640150675794,
+          "stop" : 1640150703953,
+          "duration" : 28159
+        },
+        "status" : "passed",
+        "flaky" : false,
+        "type" : "TestCaseNode"
+      } ]
+    } ]
+  } ]
+}

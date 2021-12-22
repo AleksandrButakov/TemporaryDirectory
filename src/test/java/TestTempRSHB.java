@@ -42,14 +42,14 @@ public class TestTempRSHB {
 
         // ожидаем окно принятие cookies
         System.out.println("Окно cookies");
-        createPause();
+        //createPause();
         element = driver.findElement(By.xpath("//*[@id=\"alert\"]/div/div/div[2]/button"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
         System.out.println("Step_01");
         System.out.println("Частным лицам");
-        createPause();
+        //createPause();
         // Частным лицам
         // $$("div.b-main-menu-items [href='/natural/']")
         element = driver.findElement(By.cssSelector("div.b-main-menu-items [href='/natural/']"));
@@ -59,7 +59,7 @@ public class TestTempRSHB {
 
         System.out.println("Step_02");
         System.out.println("Кредиты");
-        createPause();
+        // createPause();
         // $$("div.b-page-head [href='/natural/loans/']")
         // "div.b-page-head [href='/natural/loans/']"
         element = driver.findElement(By.cssSelector("div.b-page-head [href='/natural/loans/"));
@@ -69,7 +69,7 @@ public class TestTempRSHB {
         // скрыт alert-ом
         System.out.println("Step_03");
         System.out.println("Кредит без обеспечения");
-        createPause();
+        //createPause();
         element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[2]/div/div[2]/div[5]/div[1]/div[1]/a"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
 
@@ -106,14 +106,54 @@ public class TestTempRSHB {
         driverWait.until(ExpectedConditions.visibilityOf(element));
         //element.sendKeys("5555");
         System.out.println(element.getText());
-        element.sendKeys("154");
+
+        createPause();
+        element.clear();
+        System.out.println("Enter summa 2500000");
+        createPause();
+        element.sendKeys("2500000");
+        element.click();
+
+        //*[@id="root"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div/input
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div/input"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        System.out.println("Enter period");
+        element.clear();
+        createPause();
+        element.sendKeys("60");
 
         //driver.close();
     }
 
+    @Test
+    public void twoWebTest() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        WebDriverWait driverWait = new WebDriverWait(driver,30);
+        //WebDriverWait driverWait = new WebDriverWait(driver,30).until(ExpectedConditions.visibilityOf(element));
+        driver.get("https://www.rshb.ru/");
+
+        /*
+        работа со всплывающими окнами
+        // Alert alert = driver.switchTo().alert();
+        Alert alert = (new WebDriverWait(driver, 10)).until(ExpectedConditions.alertIsPresent());
+        alert.dismiss();
+        alert accept();
+         */
+
+        // ожидаем окно принятие cookies
+        System.out.println("Окно cookies");
+        //createPause();
+        element = driver.findElement(By.xpath("//*[@id=\"alert\"]/div/div/div[2]/button"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+    }
+
     public void createPause() {
         try {
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
