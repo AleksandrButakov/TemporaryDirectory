@@ -1,10 +1,20 @@
 [ {
-  "uid" : "4e57b94fd93a6ec1",
+  "uid" : "f37d80451e7a6b0b",
+  "name" : "twoWebTest()",
+  "time" : {
+    "start" : 1640151426943,
+    "stop" : 1640151432732,
+    "duration" : 5789
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "88643e748d7153b3",
   "name" : "webTest()",
   "time" : {
-    "start" : 1640150675794,
-    "stop" : 1640150703953,
-    "duration" : 28159
+    "start" : 1640151386158,
+    "stop" : 1640151426795,
+    "duration" : 40637
   },
   "status" : "passed",
   "severity" : "normal"
