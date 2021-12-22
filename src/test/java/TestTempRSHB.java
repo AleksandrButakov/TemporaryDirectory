@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.json.JsonOutput;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,6 +20,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElemen
 public class TestTempRSHB {
     WebDriver driver;
     WebElement element;
+    WebElement slider;
     WebDriverWait driverWait;
 
     @Test
@@ -107,12 +109,17 @@ public class TestTempRSHB {
         //element.sendKeys("5555");
         System.out.println(element.getText());
 
+        //JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        // указываем какой скрипт необходимо выполнить. Необходимо почистить все сессионные данные, которые
+        // которые находятся в определенном окне
+        javascriptExecutor.executeScript("document.getElementByXPath(*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input).aria-valuenow=2500000");
         createPause();
-        element.clear();
+
+        //element.clear();
         System.out.println("Enter summa 2500000");
         createPause();
-        element.sendKeys("2500000");
-        element.click();
+        //element.sendKeys("2500000");
+
 
         //*[@id="root"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div/input
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div/input"));
@@ -122,38 +129,44 @@ public class TestTempRSHB {
         createPause();
         element.sendKeys("60");
 
-        //driver.close();
+        driver.close();
     }
 
     @Test
     public void twoWebTest() {
+
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         WebDriverWait driverWait = new WebDriverWait(driver,30);
         //WebDriverWait driverWait = new WebDriverWait(driver,30).until(ExpectedConditions.visibilityOf(element));
-        driver.get("https://www.rshb.ru/");
+        driver.get("https://retail.rshb.ru/loans/bez_op/?utm_source=rshb_ru&utm_medium=affiliate&utm_campaign=bez_op&utm_content=text&utm_term=headline_from_all");
 
-        /*
-        работа со всплывающими окнами
-        // Alert alert = driver.switchTo().alert();
-        Alert alert = (new WebDriverWait(driver, 10)).until(ExpectedConditions.alertIsPresent());
-        alert.dismiss();
-        alert accept();
-         */
-
-        // ожидаем окно принятие cookies
-        System.out.println("Окно cookies");
-        //createPause();
-        element = driver.findElement(By.xpath("//*[@id=\"alert\"]/div/div/div[2]/button"));
+        //*[@id="root"]/div[2]/div/button
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/button"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
+        createPause();
+
+        String s;
+
+        slider = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/div[2]/div[4]"));
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
+        s = element.getText();
+        System.out.println(s);
+        for (int i = 0; i < 100; i++) {
+            slider.sendKeys(Keys.ARROW_RIGHT);
+            //createPause();
+        }
+
+
+        //driver.close();
     }
 
     public void createPause() {
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
