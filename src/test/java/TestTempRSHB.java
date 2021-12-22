@@ -153,13 +153,31 @@ public class TestTempRSHB {
 
         slider = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/div[2]/div[4]"));
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
-        s = element.getText();
+        s = element.getAttribute("value");
+
+        String s1;
+        s1 = determinePositionSlider(s);
+
+
+
+
+
+        System.out.println("Text!!!");
         System.out.println(s);
-        for (int i = 0; i < 100; i++) {
-            slider.sendKeys(Keys.ARROW_RIGHT);
-            //createPause();
+        System.out.println(s1);
+
+        int sm;
+
+        sm = Integer.parseInt(s1);
+        while (sm != 2500000) {
+            if (sm < 2500000) {
+                slider.sendKeys(Keys.ARROW_RIGHT);
+            } else {
+                slider.sendKeys(Keys.ARROW_LEFT);
+            }
         }
 
+        // slider.sendKeys(Keys.ARROW_RIGHT);
 
         //driver.close();
     }
@@ -170,6 +188,24 @@ public class TestTempRSHB {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public String determinePositionSlider(String s) {
+
+
+        String s1 = "";
+        char sT;
+        int j =  0, a;
+        a = s.length();
+        while (j < a) {
+            sT = s.charAt(j);
+            if (sT == '0' || sT == '1' || sT == '2' || sT == '3' || sT == '4' || sT == '5' || sT == '6' || sT == '7' ||
+                    sT == '8' || sT == '9') {
+                s1 = s1 + sT;
+            }
+            j++;
+        }
+        return s1;
     }
 
 
