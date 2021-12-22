@@ -153,14 +153,10 @@ public class TestTempRSHB {
 
         slider = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/div[2]/div[4]"));
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
-        s = element.getAttribute("value");
 
+        s = element.getAttribute("value");
         String s1;
         s1 = determinePositionSlider(s);
-
-
-
-
 
         System.out.println("Text!!!");
         System.out.println(s);
@@ -172,8 +168,14 @@ public class TestTempRSHB {
         while (sm != 2500000) {
             if (sm < 2500000) {
                 slider.sendKeys(Keys.ARROW_RIGHT);
+                s = element.getAttribute(("value"));
+                s1 = determinePositionSlider(s);
+                sm = Integer.parseInt(s1);
             } else {
                 slider.sendKeys(Keys.ARROW_LEFT);
+                s = element.getAttribute(("value"));
+                s1 = determinePositionSlider(s);
+                sm = Integer.parseInt(s1);
             }
         }
 
