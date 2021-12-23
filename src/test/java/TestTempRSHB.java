@@ -109,12 +109,6 @@ public class TestTempRSHB {
         //element.sendKeys("5555");
         System.out.println(element.getText());
 
-        //JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-        // указываем какой скрипт необходимо выполнить. Необходимо почистить все сессионные данные, которые
-        // которые находятся в определенном окне
-        javascriptExecutor.executeScript("document.getElementByXPath(*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input).aria-valuenow=2500000");
-        createPause();
-
         //element.clear();
         System.out.println("Enter summa 2500000");
         createPause();
