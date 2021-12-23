@@ -160,12 +160,30 @@ public class TestTempRSHB {
         //WebDriverWait driverWait = new WebDriverWait(driver,30).until(ExpectedConditions.visibilityOf(element));
         driver.get("https://retail.rshb.ru/loans/bez_op/?utm_source=rshb_ru&utm_medium=affiliate&utm_campaign=bez_op&utm_content=text&utm_term=headline_from_all");
 
-        // заполним вручную поле
-        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
+        // закроем окно принятия cookies
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/button"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
 
+        // кликнем xpath "получаю зп в россельхоз"
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[1]/label/span/input"));
+        if (element.isSelected()) {
+            System.out.println("1 is selected");
+        } else {
+            System.out.println("1 not selected");
+        }
+        //driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+
+        if (element.isSelected()) {
+            System.out.println("2 is selected");
+        } else {
+            System.out.println("2 not selected");
+        }
 
 
     }
+
 
     // иетод задания паузы
     public void createPause() {

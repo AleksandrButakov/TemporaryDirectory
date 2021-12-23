@@ -3,45 +3,56 @@
     "failed" : 0,
     "broken" : 0,
     "skipped" : 0,
-    "passed" : 1,
+    "passed" : 2,
     "unknown" : 0,
-    "total" : 1
+    "total" : 2
   },
   "time" : {
-    "minDuration" : 48073,
-    "maxDuration" : 48073,
-    "sumDuration" : 48073,
-    "start" : 1640262718029,
-    "stop" : 1640262766102,
-    "duration" : 48073
+    "minDuration" : 6186,
+    "maxDuration" : 64069,
+    "sumDuration" : 70255,
+    "start" : 1640266344355,
+    "stop" : 1640266414726,
+    "duration" : 70371
   },
   "children" : [ {
-    "uid" : "a8d8674270aec14e",
+    "uid" : "d5dd189a8f780af9",
     "name" : "TestTempRSHB",
     "time" : {
-      "minDuration" : 48073,
-      "maxDuration" : 48073,
-      "sumDuration" : 48073,
-      "start" : 1640262718029,
-      "stop" : 1640262766102,
-      "duration" : 48073
+      "minDuration" : 6186,
+      "maxDuration" : 64069,
+      "sumDuration" : 70255,
+      "start" : 1640266344355,
+      "stop" : 1640266414726,
+      "duration" : 70371
     },
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 2,
       "unknown" : 0,
-      "total" : 1
+      "total" : 2
     },
     "type" : "TestGroupNode",
     "children" : [ {
-      "uid" : "92b42b9dbb04e4a",
-      "name" : "webTest()",
+      "uid" : "acd84226fe98b811",
+      "name" : "testCase01()",
       "time" : {
-        "start" : 1640262718029,
-        "stop" : 1640262766102,
-        "duration" : 48073
+        "start" : 1640266344355,
+        "stop" : 1640266408424,
+        "duration" : 64069
+      },
+      "status" : "passed",
+      "flaky" : false,
+      "type" : "TestCaseNode"
+    }, {
+      "uid" : "d73f90377358ae4a",
+      "name" : "testCase02()",
+      "time" : {
+        "start" : 1640266408540,
+        "stop" : 1640266414726,
+        "duration" : 6186
       },
       "status" : "passed",
       "flaky" : false,
