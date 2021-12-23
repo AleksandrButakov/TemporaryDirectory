@@ -24,7 +24,7 @@ public class TestTempRSHB {
     WebDriverWait driverWait;
 
     @Test
-    public void webTest() {
+    public void testCase01() {
 
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
@@ -103,28 +103,24 @@ public class TestTempRSHB {
         element.click();
 
         // введем размер платежа. XPath на поле
-        //*[@id="root"]/div[1]пше /div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
-        //element.sendKeys("5555");
-        System.out.println(element.getText());
-
-        //element.clear();
+        element.clear();
+        element.sendKeys("5555");
+        // System.out.println(element.getText());
         System.out.println("Enter summa 2500000");
         createPause();
-        //element.sendKeys("2500000");
 
-
-        //*[@id="root"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div/input
+        // введем количество месяцев для рассчета кредита
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div/input"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
         System.out.println("Enter period");
         element.clear();
-        createPause();
+        // createPause();
         element.sendKeys("60");
 
+        // двигаем ползунок в сторону 2 500 000 пока не достигнем результата
         String s;
-
         slider = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/div[2]/div[4]"));
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
 
@@ -135,9 +131,7 @@ public class TestTempRSHB {
         System.out.println("Text!!!");
         System.out.println(s);
         System.out.println(s1);
-
         int sm;
-
         sm = Integer.parseInt(s1);
         while (sm != 2500000) {
             if (sm < 2500000) {
@@ -152,9 +146,28 @@ public class TestTempRSHB {
                 sm = Integer.parseInt(s1);
             }
         }
+
         driver.close();
     }
 
+    @Test
+    public void testCase02() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        WebDriverWait driverWait = new WebDriverWait(driver,30);
+        //WebDriverWait driverWait = new WebDriverWait(driver,30).until(ExpectedConditions.visibilityOf(element));
+        driver.get("https://retail.rshb.ru/loans/bez_op/?utm_source=rshb_ru&utm_medium=affiliate&utm_campaign=bez_op&utm_content=text&utm_term=headline_from_all");
+
+        // заполним вручную поле
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
+
+
+
+    }
+
+    // иетод задания паузы
     public void createPause() {
         try {
             TimeUnit.SECONDS.sleep(3);
@@ -163,9 +176,8 @@ public class TestTempRSHB {
         }
     }
 
+    // выберем только цифры из поля убрав символы форматирования
     public String determinePositionSlider(String s) {
-
-
         String s1 = "";
         char sT;
         int j =  0, a;

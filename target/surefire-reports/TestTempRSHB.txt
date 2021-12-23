@@ -1,15 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestTempRSHB
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 26.06 s <<< FAILURE! - in TestTempRSHB
-webTest  Time elapsed: 25.93 s  <<< ERROR!
-org.openqa.selenium.JavascriptException: 
-javascript error: Unexpected token '*'
-  (Session info: chrome=96.0.4664.110)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-ME9VRNQ', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52657}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 859f340eb3792e1d65126349dc1cd328
-	at TestTempRSHB.webTest(TestTempRSHB.java:115)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 48.275 s - in TestTempRSHB
