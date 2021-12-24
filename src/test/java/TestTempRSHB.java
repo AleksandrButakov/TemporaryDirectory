@@ -165,22 +165,24 @@ public class TestTempRSHB {
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
-        // кликнем xpath "получаю зп в россельхоз"
+        // Установич checkbox согласно заданию
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[1]/label/span/input"));
-        if (element.isSelected()) {
-            System.out.println("1 is selected");
-        } else {
-            System.out.println("1 not selected");
-        }
-        //driverWait.until(ExpectedConditions.visibilityOf(element));
-        element.click();
-
-        if (element.isSelected()) {
-            System.out.println("2 is selected");
-        } else {
-            System.out.println("2 not selected");
+        if (!element.isSelected()) {
+            element.click();
         }
 
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[2]/label/span/input"));
+        if (element.isSelected()) {
+            element.click();
+        }
+
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[3]/label/span/input"));
+        if (element.isSelected()) {
+            element.click();
+        }
+
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]"));
+        //element.getText
 
     }
 
