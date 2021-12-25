@@ -92,7 +92,7 @@ public class TestTempRSHB {
 
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
         driver.manage().deleteAllCookies();
-        // указываем какой скрипт необходимо выполнить. Необходимо почистить все сессионные данные, которые
+        // указываем какой скрипт необходимо выполнить. Необходимо почистить все сессионные данные,
         // которые находятся в определенном окне
         javascriptExecutor.executeScript("window.sessionStorage.clear()");
         createPause();
@@ -102,23 +102,6 @@ public class TestTempRSHB {
         element = driver.findElement(By.xpath("//button[@class='cookie-consent__submit-button button button__white']"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
-
-        // введем размер платежа. XPath на поле
-        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
-        driverWait.until(ExpectedConditions.visibilityOf(element));
-        element.clear();
-        element.sendKeys("5555");
-        // System.out.println(element.getText());
-        System.out.println("Enter summa 2500000");
-        createPause();
-
-        // введем количество месяцев для рассчета кредита
-        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div/input"));
-        driverWait.until(ExpectedConditions.visibilityOf(element));
-        System.out.println("Enter period");
-        element.clear();
-        // createPause();
-        element.sendKeys("60");
 
         // двигаем ползунок в сторону 2 500 000 пока не достигнем результата
         String s;
@@ -148,11 +131,52 @@ public class TestTempRSHB {
             }
         }
 
+        // введем количество месяцев для рассчета кредита
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div/input"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        System.out.println("Enter period");
+        element.clear();
+        // createPause();
+        element.sendKeys("60");
+
+        // Установич checkbox согласно заданию
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[1]/label/span/input"));
+        if (!element.isSelected()) {
+            element.click();
+        }
+
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[2]/label/span/input"));
+        if (element.isSelected()) {
+            element.click();
+        }
+
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[3]/label/span/input"));
+        if (element.isSelected()) {
+            element.click();
+        }
+
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]"));
+        //element.getText
+
+
+        // проверим что ежемесячный платеж составляет 53061 Р
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]"));
+        s = element.getText();
+        System.out.println(s);
+        Assert.assertEquals(s, "56 118 ₽");
+
+        // проверим что процентная ставка составляет 12.4%
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[2]/div[1]"));
+        s = element.getText();
+        System.out.println(s);
+        Assert.assertEquals(s, "12.4%");
+
         driver.close();
     }
 
     @Test
     public void testCase02() {
+        /*
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -193,9 +217,14 @@ public class TestTempRSHB {
         System.out.println(s);
         Assert.assertEquals(s, "53 061 ₽");
 
-
+        // проверим что процентная ставка составляет 12.4%
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[2]/div[1]"));
+        s = element.getText();
+        System.out.println(s);
+        Assert.assertEquals(s, "12.4%");
 
         driver.close();
+        */
     }
 
 
