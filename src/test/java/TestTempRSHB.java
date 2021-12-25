@@ -169,15 +169,41 @@ public class TestTempRSHB {
 
     @Test
     public void testCase02() {
-        /*
+
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         WebDriverWait driverWait = new WebDriverWait(driver,30);
         //WebDriverWait driverWait = new WebDriverWait(driver,30).until(ExpectedConditions.visibilityOf(element));
-        driver.get("https://retail.rshb.ru/loans/bez_op/?utm_source=rshb_ru&utm_medium=affiliate&utm_campaign=bez_op&utm_content=text&utm_term=headline_from_all");
+        driver.get("https://www.rshb.ru");
 
+        // кликнуть "Частным лицам"
+        System.out.println("Individuals");
+        element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/header/nav/div[1]/a[1]"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+
+        // кликнуть "Кредиты"
+        System.out.println("Credits");
+        element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[2]/div/div[2]/div[1]/nav/a[3]"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+
+        // кликнуть "Потребительский кредит без обеспечения"
+        System.out.println("consumer credit without collateral");
+        element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[2]/div/div[2]/div[5]/div[1]/div[1]/a"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+
+        // тип платежа выбрать "Аннуитентный"
+        System.out.println("Annuity");
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[2]/div[2]/div/button[1]"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+
+
+
+        /*
         // закроем окно принятия cookies
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/button"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
@@ -215,9 +241,10 @@ public class TestTempRSHB {
         s = element.getText();
         System.out.println(s);
         Assert.assertEquals(s, "12.4%");
+         */
 
         driver.close();
-        */
+
     }
 
 
