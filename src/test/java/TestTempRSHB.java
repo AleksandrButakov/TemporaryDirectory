@@ -44,14 +44,14 @@ public class TestTempRSHB {
          */
 
         // ожидаем окно принятие cookies
-        System.out.println("Окно cookies");
+        System.out.println("Cookie agreement window");
         //createPause();
         element = driver.findElement(By.xpath("//*[@id=\"alert\"]/div/div/div[2]/button"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
         System.out.println("Step_01");
-        System.out.println("Частным лицам");
+        System.out.println("Individuals");
         //createPause();
         // Частным лицам
         // $$("div.b-main-menu-items [href='/natural/']")
@@ -60,8 +60,7 @@ public class TestTempRSHB {
         element.click();
         // driver.findElement(By.xpath("/html/body/div[6]/div[1]/header/nav/div[1]/a[1]")).click();
 
-        System.out.println("Step_02");
-        System.out.println("Кредиты");
+        System.out.println("Credits");
         // createPause();
         // $$("div.b-page-head [href='/natural/loans/']")
         // "div.b-page-head [href='/natural/loans/']"
@@ -70,8 +69,7 @@ public class TestTempRSHB {
         element.click();
 
         // скрыт alert-ом
-        System.out.println("Step_03");
-        System.out.println("Кредит без обеспечения");
+        System.out.println("Loan without collateral");
         //createPause();
         element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[2]/div/div[2]/div[5]/div[1]/div[1]/a"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
@@ -112,7 +110,7 @@ public class TestTempRSHB {
         String s1;
         s1 = determinePositionSlider(s);
 
-        System.out.println("Text!!!");
+        System.out.println("Calculation of monthly payment");
         System.out.println(s);
         System.out.println(s1);
         int sm;
@@ -139,25 +137,19 @@ public class TestTempRSHB {
         // createPause();
         element.sendKeys("60");
 
-        // Установич checkbox согласно заданию
+        // Установич checkbox согласно заданию, певый isSelected, второй и третий is Diselected
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[1]/label/span/input"));
         if (!element.isSelected()) {
             element.click();
         }
-
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[2]/label/span/input"));
         if (element.isSelected()) {
             element.click();
         }
-
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[3]/label/span/input"));
         if (element.isSelected()) {
             element.click();
         }
-
-        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]"));
-        //element.getText
-
 
         // проверим что ежемесячный платеж составляет 53061 Р
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]"));
@@ -171,6 +163,7 @@ public class TestTempRSHB {
         System.out.println(s);
         Assert.assertEquals(s, "12.4%");
 
+        System.out.println("Test is closed");
         driver.close();
     }
 
@@ -226,8 +219,6 @@ public class TestTempRSHB {
         driver.close();
         */
     }
-
-
 
 
     // иетод задания паузы

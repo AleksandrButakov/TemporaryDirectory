@@ -9,22 +9,22 @@
   },
   "time" : {
     "minDuration" : 0,
-    "maxDuration" : 48790,
-    "sumDuration" : 48790,
-    "start" : 1640445598892,
-    "stop" : 1640445647823,
-    "duration" : 48931
+    "maxDuration" : 45326,
+    "sumDuration" : 45326,
+    "start" : 1640446688653,
+    "stop" : 1640446734135,
+    "duration" : 45482
   },
   "children" : [ {
-    "uid" : "73e0d82c80b7c2e0",
+    "uid" : "a8dd5db2d50b087f",
     "name" : "DESKTOP-ME9VRNQ",
     "time" : {
       "minDuration" : 0,
-      "maxDuration" : 48790,
-      "sumDuration" : 48790,
-      "start" : 1640445598892,
-      "stop" : 1640445647823,
-      "duration" : 48931
+      "maxDuration" : 45326,
+      "sumDuration" : 45326,
+      "start" : 1640446688653,
+      "stop" : 1640446734135,
+      "duration" : 45482
     },
     "statistic" : {
       "failed" : 0,
@@ -36,15 +36,15 @@
     },
     "type" : "TestGroupNode",
     "children" : [ {
-      "uid" : "b50c5fdb808e2707",
-      "name" : "6468@DESKTOP-ME9VRNQ.main(1)",
+      "uid" : "9941fd39f46567",
+      "name" : "8088@DESKTOP-ME9VRNQ.main(1)",
       "time" : {
         "minDuration" : 0,
-        "maxDuration" : 48790,
-        "sumDuration" : 48790,
-        "start" : 1640445598892,
-        "stop" : 1640445647823,
-        "duration" : 48931
+        "maxDuration" : 45326,
+        "sumDuration" : 45326,
+        "start" : 1640446688653,
+        "stop" : 1640446734135,
+        "duration" : 45482
       },
       "statistic" : {
         "failed" : 0,
@@ -56,23 +56,23 @@
       },
       "type" : "TestGroupNode",
       "children" : [ {
-        "uid" : "9528b55b7c1eafd6",
-        "name" : "testCase02()",
+        "uid" : "c02de7a8c1589a5f",
+        "name" : "testCase01()",
         "time" : {
-          "start" : 1640445647823,
-          "stop" : 1640445647823,
-          "duration" : 0
+          "start" : 1640446688653,
+          "stop" : 1640446733979,
+          "duration" : 45326
         },
         "status" : "passed",
         "flaky" : false,
         "type" : "TestCaseNode"
       }, {
-        "uid" : "463a34163b4adc53",
-        "name" : "testCase01()",
+        "uid" : "cee0218c89b001d2",
+        "name" : "testCase02()",
         "time" : {
-          "start" : 1640445598892,
-          "stop" : 1640445647682,
-          "duration" : 48790
+          "start" : 1640446734135,
+          "stop" : 1640446734135,
+          "duration" : 0
         },
         "status" : "passed",
         "flaky" : false,
