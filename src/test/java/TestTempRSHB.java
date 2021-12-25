@@ -1,3 +1,4 @@
+import junit.framework.Assert;
 import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -184,7 +185,20 @@ public class TestTempRSHB {
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]"));
         //element.getText
 
+
+        // проверим что ежемесячный платеж составляет 53061 Р
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]"));
+        String s;
+        s = element.getText();
+        System.out.println(s);
+        Assert.assertEquals(s, "53 061 ₽");
+
+
+
+        driver.close();
     }
+
+
 
 
     // иетод задания паузы
