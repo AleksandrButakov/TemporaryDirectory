@@ -1,60 +1,60 @@
 {
   "statistic" : {
     "failed" : 0,
-    "broken" : 1,
+    "broken" : 0,
     "skipped" : 0,
-    "passed" : 1,
+    "passed" : 2,
     "unknown" : 0,
     "total" : 2
   },
   "time" : {
-    "minDuration" : 16116,
-    "maxDuration" : 43428,
-    "sumDuration" : 59544,
-    "start" : 1640583287915,
-    "stop" : 1640583347714,
-    "duration" : 59799
+    "minDuration" : 42736,
+    "maxDuration" : 45932,
+    "sumDuration" : 88668,
+    "start" : 1640591289119,
+    "stop" : 1640591377949,
+    "duration" : 88830
   },
   "children" : [ {
-    "uid" : "4c72f8e0673082d1",
+    "uid" : "a9a385b2ca42771c",
     "name" : "TestTempRSHB",
     "time" : {
-      "minDuration" : 16116,
-      "maxDuration" : 43428,
-      "sumDuration" : 59544,
-      "start" : 1640583287915,
-      "stop" : 1640583347714,
-      "duration" : 59799
+      "minDuration" : 42736,
+      "maxDuration" : 45932,
+      "sumDuration" : 88668,
+      "start" : 1640591289119,
+      "stop" : 1640591377949,
+      "duration" : 88830
     },
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 2,
       "unknown" : 0,
       "total" : 2
     },
     "type" : "TestGroupNode",
     "children" : [ {
-      "uid" : "9d5584b1e54cf2af",
-      "name" : "testCase01",
+      "uid" : "5e865ac8e485abf8",
+      "name" : "testCase02",
       "time" : {
-        "start" : 1640583287915,
-        "stop" : 1640583331343,
-        "duration" : 43428
+        "start" : 1640591335213,
+        "stop" : 1640591377949,
+        "duration" : 42736
       },
       "status" : "passed",
       "flaky" : false,
       "type" : "TestCaseNode"
     }, {
-      "uid" : "b6e117edb3891ae4",
-      "name" : "testCase02",
+      "uid" : "f1307b7e72e18dca",
+      "name" : "testCase01",
       "time" : {
-        "start" : 1640583331598,
-        "stop" : 1640583347714,
-        "duration" : 16116
+        "start" : 1640591289119,
+        "stop" : 1640591335051,
+        "duration" : 45932
       },
-      "status" : "broken",
+      "status" : "passed",
       "flaky" : false,
       "type" : "TestCaseNode"
     } ]

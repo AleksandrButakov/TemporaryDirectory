@@ -26,7 +26,7 @@ public class TestTempRSHB {
 
     @Test
     public void testCase01() {
-
+        System.out.println("testCase01");
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -169,7 +169,7 @@ public class TestTempRSHB {
 
     @Test
     public void testCase02() {
-
+        System.out.println("testCase02");
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -190,9 +190,21 @@ public class TestTempRSHB {
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
+        // закроем окно принятия cookies
+        System.out.println("Cookies window");
+        element = driver.findElement(By.xpath("//*[@id=\"alert\"]/div/div/div[2]/button"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+
         // кликнуть "Потребительский кредит без обеспечения"
         System.out.println("consumer credit without collateral");
         element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[2]/div/div[2]/div[5]/div[1]/div[1]/a"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+
+        // закроем окно cookies
+        System.out.println("Close cookies window");
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/button"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
@@ -202,50 +214,69 @@ public class TestTempRSHB {
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
-        // установим сумму кредита 2 500 000 р
-        System.out.println("Let's choose the loan amount 2 500 000 Р");
-        element = driver.findElement(By.xpath(""));
+        // двигаем ползунок в сторону 2 500 000 пока не достигнем результата
+        String s;
+        slider = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/div[2]/div[4]"));
 
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[3]/div/input"));
 
-        /*
-        // закроем окно принятия cookies
-        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/button"));
+        s = element.getAttribute("value");
+        String s1;
+        s1 = determinePositionSlider(s);
+
+        System.out.println("Calculation of monthly payment");
+        System.out.println(s);
+        System.out.println(s1);
+        int sm;
+        sm = Integer.parseInt(s1);
+        while (sm != 2500000) {
+            if (sm < 2500000) {
+                slider.sendKeys(Keys.ARROW_RIGHT);
+                s = element.getAttribute(("value"));
+                s1 = determinePositionSlider(s);
+                sm = Integer.parseInt(s1);
+            } else {
+                slider.sendKeys(Keys.ARROW_LEFT);
+                s = element.getAttribute(("value"));
+                s1 = determinePositionSlider(s);
+                sm = Integer.parseInt(s1);
+            }
+        }
+
+        // срок кредита 60 месяцев
+        System.out.println("Number of mounts");
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div/input"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
-        element.click();
+        element.clear();
+        element.sendKeys("60");
 
-        // Установич checkbox согласно заданию
+        // Активны только checkBox Получаю ЗП в Россельхоз и Комплексная защита
+        System.out.println("Select checkbox");
+
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[1]/label/span/input"));
         if (!element.isSelected()) {
             element.click();
         }
-
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[2]/label/span/input"));
         if (element.isSelected()) {
             element.click();
         }
-
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[4]/div[3]/label/span/input"));
-        if (element.isSelected()) {
+        if (!element.isSelected()) {
             element.click();
         }
 
-        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]"));
-        //element.getText
-
-
-        // проверим что ежемесячный платеж составляет 53061 Р
-        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]"));
-        String s;
-        s = element.getText();
-        System.out.println(s);
-        Assert.assertEquals(s, "53 061 ₽");
-
-        // проверим что процентная ставка составляет 12.4%
+        // проверим что ставка = 8,4%
+        System.out.println("Let's check the size of the interest rate");
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[2]/div[1]"));
         s = element.getText();
-        System.out.println(s);
-        Assert.assertEquals(s, "12.4%");
-         */
+        Assert.assertEquals(s, "8.4%");
+
+        // проверим что размер ежемесячного платежа составляет 51171
+        System.out.println("Let's check the monthly payment amount");
+        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]"));
+        s = element.getText();
+        Assert.assertEquals(s, "51 171 ₽");
 
         driver.close();
 
@@ -276,6 +307,11 @@ public class TestTempRSHB {
             j++;
         }
         return s1;
+    }
+
+    // метод ожидания видимости элемента
+    public void waitElementAppear (WebElement element) {
+        driverWait.until(ExpectedConditions.visibilityOf(element));
     }
 
 

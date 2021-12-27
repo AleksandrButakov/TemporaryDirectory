@@ -2,20 +2,19 @@
   "8bde2f745dfa5ef675723082996dd50b" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "b6e117edb3891ae4",
-      "status" : "broken",
-      "statusDetails" : "element click intercepted: Element <a class=\"linkip\" href=\"https://retail.rshb.ru/loans/bez_op/?utm_source=rshb_ru&amp;utm_medium=affiliate&amp;utm_campaign=bez_op&amp;utm_content=text&amp;utm_term=headline_from_all\">...</a> is not clickable at point (701, 905). Other element would receive the click: <div class=\"bottom\" id=\"alert\">...</div>\n  (Session info: chrome=96.0.4664.110)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'DESKTOP-ME9VRNQ', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\\Users\\User\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:53207}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 89c12822de0e954eadad10dc9a4825d1",
+      "uid" : "5e865ac8e485abf8",
+      "status" : "passed",
       "time" : {
-        "start" : 1640583331598,
-        "stop" : 1640583347714,
-        "duration" : 16116
+        "start" : 1640591335213,
+        "stop" : 1640591377949,
+        "duration" : 42736
       }
     } ]
   },
@@ -29,12 +28,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "9d5584b1e54cf2af",
+      "uid" : "f1307b7e72e18dca",
       "status" : "passed",
       "time" : {
-        "start" : 1640583287915,
-        "stop" : 1640583331343,
-        "duration" : 43428
+        "start" : 1640591289119,
+        "stop" : 1640591335051,
+        "duration" : 45932
       }
     } ]
   }
