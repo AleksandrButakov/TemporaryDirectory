@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import sun.jvm.hotspot.utilities.AssertionFailure;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -174,6 +175,7 @@ public class TestTempRSHB {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().deleteAllCookies();
         WebDriverWait driverWait = new WebDriverWait(driver,30);
         //WebDriverWait driverWait = new WebDriverWait(driver,30).until(ExpectedConditions.visibilityOf(element));
         driver.get("https://www.rshb.ru");
@@ -279,9 +281,86 @@ public class TestTempRSHB {
         Assert.assertEquals(s, "51 171 ₽");
 
         driver.close();
-
     }
 
+    @Test
+    public void testCase03() {
+
+        System.out.println("testCase03");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().deleteAllCookies();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        WebDriverWait driverWait = new WebDriverWait(driver, 30);
+
+        // Зайти на сайт rshb.ru
+        System.out.println("Go to the website");
+        driver.get("https://www.rshb.ru");
+
+        // Кликнуть «Частным лицам»
+        System.out.println("Click on 'Private person'");
+        element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/header/nav/div[1]/a[1]"));
+        waitElementAppear(element);
+        element.click();
+
+        // Кликнуть «Вклады и сбережения»
+        System.out.println("Click on 'Deposits and Savings'");
+        element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[2]/div/div[2]/div[1]/nav/a[5]"));
+        waitElementAppear(element);
+        element.click();
+
+        // Кликнуть «Накопительный счёт»
+        System.out.println("Click on 'Savings Account'");
+        element = driver.findElement(By.xpath("//*[@id=\"tab604\"]/nav/div[4]/div/a[1]"));
+        waitElementAppear(element);
+        element.click();
+
+        // Кликнуть «расчет доходности по сбережениям»
+        System.out.println("Click on 'Calculation of profitability on savings'");
+        element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[2]/div/div[2]/div/div/a"));
+        waitElementAppear(element);
+        element.click();
+
+        // Проверить что таблица «Вклады и сбережения» соответствует:
+        String s;
+        // Накопительный счет «Моя выгода» = 5.5%
+        System.out.println("Savings account 'My benefit' = 5.5%");
+        element = driver.findElement(By.xpath("//*[@id=\"deposit_451879\"]/td[5]"));
+        waitElementAppear(element);
+        s = element.getText();
+        Assert.assertEquals(s, "5.5%");
+
+        // Накопительный счет «Моя копилка» = 5%
+        System.out.println("Savings account 'My piggy bank' = 5%");
+        element = driver.findElement(By.xpath("//*[@id=\"deposit_409523\"]/td[5]"));
+        s = element.getText();
+        Assert.assertEquals(s, "5%");
+
+        // Накопительный счет «Мой счет» = 4%
+        System.out.println("Savings account 'My account' = 4%");
+        element = driver.findElement(By.xpath("//*[@id=\"deposit_330854\"]/td[5]"));
+        s = element.getText();
+        Assert.assertEquals(s, "4%");
+
+        // Накопительный счет «Ультра» = 0.01%
+        System.out.println("Savings account 'Ultra' = 0.01%");
+        element = driver.findElement(By.xpath("//*[@id=\"deposit_451946\"]/td[5]"));
+        s = element.getText();
+        Assert.assertEquals(s, "0.01%");
+
+        // Накопительный счет «Премиум» = 0.01%
+        System.out.println("Premium savings account = 0.01%");
+        element = driver.findElement(By.xpath("//*[@id=\"deposit_451924\"]/td[5]"));
+        s = element.getText();
+        Assert.assertEquals(s, "0.01%");
+
+        // Накопительный счет «До востребования» = 0.01%
+        System.out.println("Accumulative account 'On demand' = 0.01%");
+        element = driver.findElement(By.xpath("//*[@id=\"deposit_11790\"]/td[5]"));
+        s = element.getText();
+        Assert.assertEquals(s, "0.01%");
+
+    }
 
     // иетод задания паузы
     public void createPause() {
