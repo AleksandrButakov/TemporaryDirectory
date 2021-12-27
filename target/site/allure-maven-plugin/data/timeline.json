@@ -1,91 +1,91 @@
 {
   "statistic" : {
     "failed" : 0,
-    "broken" : 1,
+    "broken" : 0,
     "skipped" : 0,
-    "passed" : 2,
+    "passed" : 3,
     "unknown" : 0,
     "total" : 3
   },
   "time" : {
-    "minDuration" : 33922,
-    "maxDuration" : 38282,
-    "sumDuration" : 110026,
-    "start" : 1640621144201,
-    "stop" : 1640621254382,
-    "duration" : 110181
+    "minDuration" : 20768,
+    "maxDuration" : 39265,
+    "sumDuration" : 93673,
+    "start" : 1640622452576,
+    "stop" : 1640622546411,
+    "duration" : 93835
   },
   "children" : [ {
-    "uid" : "6208125905e7bb24",
+    "uid" : "e63eebdb90b1c10d",
     "name" : "DESKTOP-ME9VRNQ",
     "time" : {
-      "minDuration" : 33922,
-      "maxDuration" : 38282,
-      "sumDuration" : 110026,
-      "start" : 1640621144201,
-      "stop" : 1640621254382,
-      "duration" : 110181
+      "minDuration" : 20768,
+      "maxDuration" : 39265,
+      "sumDuration" : 93673,
+      "start" : 1640622452576,
+      "stop" : 1640622546411,
+      "duration" : 93835
     },
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 2,
+      "passed" : 3,
       "unknown" : 0,
       "total" : 3
     },
     "type" : "TestGroupNode",
     "children" : [ {
-      "uid" : "1aa102ff34535020",
-      "name" : "16028@DESKTOP-ME9VRNQ.main(1)",
+      "uid" : "a94374a45b652172",
+      "name" : "3384@DESKTOP-ME9VRNQ.main(1)",
       "time" : {
-        "minDuration" : 33922,
-        "maxDuration" : 38282,
-        "sumDuration" : 110026,
-        "start" : 1640621144201,
-        "stop" : 1640621254382,
-        "duration" : 110181
+        "minDuration" : 20768,
+        "maxDuration" : 39265,
+        "sumDuration" : 93673,
+        "start" : 1640622452576,
+        "stop" : 1640622546411,
+        "duration" : 93835
       },
       "statistic" : {
         "failed" : 0,
-        "broken" : 1,
+        "broken" : 0,
         "skipped" : 0,
-        "passed" : 2,
+        "passed" : 3,
         "unknown" : 0,
         "total" : 3
       },
       "type" : "TestGroupNode",
       "children" : [ {
-        "uid" : "a0d136cbf9a186d",
-        "name" : "testCase02()",
-        "time" : {
-          "start" : 1640621182623,
-          "stop" : 1640621216545,
-          "duration" : 33922
-        },
-        "status" : "passed",
-        "flaky" : false,
-        "type" : "TestCaseNode"
-      }, {
-        "uid" : "27da19656da792f6",
+        "uid" : "c9510497376ed5d8",
         "name" : "testCase01()",
         "time" : {
-          "start" : 1640621144201,
-          "stop" : 1640621182483,
-          "duration" : 38282
+          "start" : 1640622452576,
+          "stop" : 1640622491841,
+          "duration" : 39265
         },
         "status" : "passed",
         "flaky" : false,
         "type" : "TestCaseNode"
       }, {
-        "uid" : "59d8d65072d8794",
+        "uid" : "4aecb1c646c863c",
         "name" : "testCase03()",
         "time" : {
-          "start" : 1640621216560,
-          "stop" : 1640621254382,
-          "duration" : 37822
+          "start" : 1640622525643,
+          "stop" : 1640622546411,
+          "duration" : 20768
         },
-        "status" : "broken",
+        "status" : "passed",
+        "flaky" : false,
+        "type" : "TestCaseNode"
+      }, {
+        "uid" : "bc588c5bd1d81c2a",
+        "name" : "testCase02()",
+        "time" : {
+          "start" : 1640622491988,
+          "stop" : 1640622525628,
+          "duration" : 33640
+        },
+        "status" : "passed",
         "flaky" : false,
         "type" : "TestCaseNode"
       } ]

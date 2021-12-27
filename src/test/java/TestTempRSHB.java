@@ -316,7 +316,7 @@ public class TestTempRSHB {
 
         // Кликнуть «Накопительный счёт»
         System.out.println("Click on 'Savings Account'");
-        element = driver.findElement(By.xpath("//*[@id=\"tab604\"]/nav/div[4]/div/a[1]"));
+        element = driver.findElement(By.xpath("//*[@id=\"lazycross b-sections-menu-item-cover-img334563\"]/img"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
