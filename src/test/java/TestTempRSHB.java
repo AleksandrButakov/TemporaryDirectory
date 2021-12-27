@@ -200,7 +200,11 @@ public class TestTempRSHB {
         System.out.println("Annuity");
         element = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div[4]/div[1]/div/div/div[2]/div[2]/div[2]/div/button[1]"));
         driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
 
+        // установим сумму кредита 2 500 000 р
+        System.out.println("Let's choose the loan amount 2 500 000 Р");
+        element = driver.findElement(By.xpath(""));
 
 
         /*

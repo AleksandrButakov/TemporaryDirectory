@@ -1,80 +1,80 @@
 {
   "statistic" : {
     "failed" : 0,
-    "broken" : 0,
+    "broken" : 1,
     "skipped" : 0,
-    "passed" : 2,
+    "passed" : 1,
     "unknown" : 0,
     "total" : 2
   },
   "time" : {
-    "minDuration" : 0,
-    "maxDuration" : 45326,
-    "sumDuration" : 45326,
-    "start" : 1640446688653,
-    "stop" : 1640446734135,
-    "duration" : 45482
+    "minDuration" : 16116,
+    "maxDuration" : 43428,
+    "sumDuration" : 59544,
+    "start" : 1640583287915,
+    "stop" : 1640583347714,
+    "duration" : 59799
   },
   "children" : [ {
-    "uid" : "a9027e6fe758bd3",
+    "uid" : "73db0ebdbac81ab7",
     "name" : "Default feature",
     "time" : {
-      "minDuration" : 0,
-      "maxDuration" : 45326,
-      "sumDuration" : 45326,
-      "start" : 1640446688653,
-      "stop" : 1640446734135,
-      "duration" : 45482
+      "minDuration" : 16116,
+      "maxDuration" : 43428,
+      "sumDuration" : 59544,
+      "start" : 1640583287915,
+      "stop" : 1640583347714,
+      "duration" : 59799
     },
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 2,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 2
     },
     "type" : "TestGroupNode",
     "children" : [ {
-      "uid" : "2f60ca10866b29f4",
+      "uid" : "4f78398401163a68",
       "name" : "Default story",
       "time" : {
-        "minDuration" : 0,
-        "maxDuration" : 45326,
-        "sumDuration" : 45326,
-        "start" : 1640446688653,
-        "stop" : 1640446734135,
-        "duration" : 45482
+        "minDuration" : 16116,
+        "maxDuration" : 43428,
+        "sumDuration" : 59544,
+        "start" : 1640583287915,
+        "stop" : 1640583347714,
+        "duration" : 59799
       },
       "statistic" : {
         "failed" : 0,
-        "broken" : 0,
+        "broken" : 1,
         "skipped" : 0,
-        "passed" : 2,
+        "passed" : 1,
         "unknown" : 0,
         "total" : 2
       },
       "type" : "TestGroupNode",
       "children" : [ {
-        "uid" : "c02de7a8c1589a5f",
+        "uid" : "9d5584b1e54cf2af",
         "name" : "testCase01()",
         "time" : {
-          "start" : 1640446688653,
-          "stop" : 1640446733979,
-          "duration" : 45326
+          "start" : 1640583287915,
+          "stop" : 1640583331343,
+          "duration" : 43428
         },
         "status" : "passed",
         "flaky" : false,
         "type" : "TestCaseNode"
       }, {
-        "uid" : "cee0218c89b001d2",
+        "uid" : "b6e117edb3891ae4",
         "name" : "testCase02()",
         "time" : {
-          "start" : 1640446734135,
-          "stop" : 1640446734135,
-          "duration" : 0
+          "start" : 1640583331598,
+          "stop" : 1640583347714,
+          "duration" : 16116
         },
-        "status" : "passed",
+        "status" : "broken",
         "flaky" : false,
         "type" : "TestCaseNode"
       } ]
