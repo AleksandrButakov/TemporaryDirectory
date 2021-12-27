@@ -11,10 +11,9 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import sun.jvm.hotspot.utilities.AssertionFailure;
-
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
@@ -290,6 +289,7 @@ public class TestTempRSHB {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         WebDriverWait driverWait = new WebDriverWait(driver, 30);
 
@@ -297,28 +297,33 @@ public class TestTempRSHB {
         System.out.println("Go to the website");
         driver.get("https://www.rshb.ru");
 
+        // закроем окно с cookies
+        element = driver.findElement(By.xpath("//*[@id=\"alert\"]/div/div/div[2]/button"));
+        driverWait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
+
         // Кликнуть «Частным лицам»
         System.out.println("Click on 'Private person'");
         element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/header/nav/div[1]/a[1]"));
-        waitElementAppear(element);
+        driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
         // Кликнуть «Вклады и сбережения»
         System.out.println("Click on 'Deposits and Savings'");
         element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[2]/div/div[2]/div[1]/nav/a[5]"));
-        waitElementAppear(element);
+        driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
         // Кликнуть «Накопительный счёт»
         System.out.println("Click on 'Savings Account'");
         element = driver.findElement(By.xpath("//*[@id=\"tab604\"]/nav/div[4]/div/a[1]"));
-        waitElementAppear(element);
+        driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
         // Кликнуть «расчет доходности по сбережениям»
         System.out.println("Click on 'Calculation of profitability on savings'");
         element = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[2]/div/div[2]/div/div/a"));
-        waitElementAppear(element);
+        driverWait.until(ExpectedConditions.visibilityOf(element));
         element.click();
 
         // Проверить что таблица «Вклады и сбережения» соответствует:
@@ -326,7 +331,7 @@ public class TestTempRSHB {
         // Накопительный счет «Моя выгода» = 5.5%
         System.out.println("Savings account 'My benefit' = 5.5%");
         element = driver.findElement(By.xpath("//*[@id=\"deposit_451879\"]/td[5]"));
-        waitElementAppear(element);
+        driverWait.until(ExpectedConditions.visibilityOf(element));
         s = element.getText();
         Assert.assertEquals(s, "5.5%");
 
@@ -360,6 +365,7 @@ public class TestTempRSHB {
         s = element.getText();
         Assert.assertEquals(s, "0.01%");
 
+        driver.close();
     }
 
     // иетод задания паузы

@@ -1,0 +1,73 @@
+{
+  "statistic" : {
+    "failed" : 0,
+    "broken" : 1,
+    "skipped" : 0,
+    "passed" : 2,
+    "unknown" : 0,
+    "total" : 3
+  },
+  "time" : {
+    "minDuration" : 33922,
+    "maxDuration" : 38282,
+    "sumDuration" : 110026,
+    "start" : 1640621144201,
+    "stop" : 1640621254382,
+    "duration" : 110181
+  },
+  "children" : [ {
+    "uid" : "34c365130e279b60",
+    "name" : "TestTempRSHB",
+    "time" : {
+      "minDuration" : 33922,
+      "maxDuration" : 38282,
+      "sumDuration" : 110026,
+      "start" : 1640621144201,
+      "stop" : 1640621254382,
+      "duration" : 110181
+    },
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 3
+    },
+    "type" : "TestGroupNode",
+    "children" : [ {
+      "uid" : "a0d136cbf9a186d",
+      "name" : "testCase02",
+      "time" : {
+        "start" : 1640621182623,
+        "stop" : 1640621216545,
+        "duration" : 33922
+      },
+      "status" : "passed",
+      "flaky" : false,
+      "type" : "TestCaseNode"
+    }, {
+      "uid" : "27da19656da792f6",
+      "name" : "testCase01",
+      "time" : {
+        "start" : 1640621144201,
+        "stop" : 1640621182483,
+        "duration" : 38282
+      },
+      "status" : "passed",
+      "flaky" : false,
+      "type" : "TestCaseNode"
+    }, {
+      "uid" : "59d8d65072d8794",
+      "name" : "testCase03",
+      "time" : {
+        "start" : 1640621216560,
+        "stop" : 1640621254382,
+        "duration" : 37822
+      },
+      "status" : "broken",
+      "flaky" : false,
+      "type" : "TestCaseNode"
+    } ]
+  } ]
+}
