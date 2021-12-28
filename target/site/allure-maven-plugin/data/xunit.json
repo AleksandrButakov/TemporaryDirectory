@@ -8,23 +8,23 @@
     "total" : 3
   },
   "time" : {
-    "minDuration" : 20768,
-    "maxDuration" : 39265,
-    "sumDuration" : 93673,
-    "start" : 1640622452576,
-    "stop" : 1640622546411,
-    "duration" : 93835
+    "minDuration" : 21041,
+    "maxDuration" : 40326,
+    "sumDuration" : 97936,
+    "start" : 1640715240757,
+    "stop" : 1640715338884,
+    "duration" : 98127
   },
   "children" : [ {
-    "uid" : "b769c56f6c773916",
+    "uid" : "aac94dba3d11cd17",
     "name" : "TestTempRSHB",
     "time" : {
-      "minDuration" : 20768,
-      "maxDuration" : 39265,
-      "sumDuration" : 93673,
-      "start" : 1640622452576,
-      "stop" : 1640622546411,
-      "duration" : 93835
+      "minDuration" : 21041,
+      "maxDuration" : 40326,
+      "sumDuration" : 97936,
+      "start" : 1640715240757,
+      "stop" : 1640715338884,
+      "duration" : 98127
     },
     "statistic" : {
       "failed" : 0,
@@ -36,34 +36,34 @@
     },
     "type" : "TestGroupNode",
     "children" : [ {
-      "uid" : "c9510497376ed5d8",
-      "name" : "testCase01()",
-      "time" : {
-        "start" : 1640622452576,
-        "stop" : 1640622491841,
-        "duration" : 39265
-      },
-      "status" : "passed",
-      "flaky" : false,
-      "type" : "TestCaseNode"
-    }, {
-      "uid" : "4aecb1c646c863c",
+      "uid" : "e6bd40c89bff4cd6",
       "name" : "testCase03()",
       "time" : {
-        "start" : 1640622525643,
-        "stop" : 1640622546411,
-        "duration" : 20768
+        "start" : 1640715317843,
+        "stop" : 1640715338884,
+        "duration" : 21041
       },
       "status" : "passed",
       "flaky" : false,
       "type" : "TestCaseNode"
     }, {
-      "uid" : "bc588c5bd1d81c2a",
+      "uid" : "4e8b577f81785271",
       "name" : "testCase02()",
       "time" : {
-        "start" : 1640622491988,
-        "stop" : 1640622525628,
-        "duration" : 33640
+        "start" : 1640715281263,
+        "stop" : 1640715317832,
+        "duration" : 36569
+      },
+      "status" : "passed",
+      "flaky" : false,
+      "type" : "TestCaseNode"
+    }, {
+      "uid" : "aa40bdc03142026f",
+      "name" : "testCase01()",
+      "time" : {
+        "start" : 1640715240757,
+        "stop" : 1640715281083,
+        "duration" : 40326
       },
       "status" : "passed",
       "flaky" : false,
