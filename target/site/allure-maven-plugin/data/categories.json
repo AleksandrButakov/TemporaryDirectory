@@ -1,1 +1,104 @@
-{ }
+{
+  "statistic" : {
+    "failed" : 0,
+    "broken" : 2,
+    "skipped" : 0,
+    "passed" : 0,
+    "unknown" : 0,
+    "total" : 2
+  },
+  "time" : {
+    "minDuration" : 36436,
+    "maxDuration" : 38964,
+    "sumDuration" : 75400,
+    "start" : 1642161288073,
+    "stop" : 1642161363638,
+    "duration" : 75565
+  },
+  "children" : [ {
+    "uid" : "8e029020c3e92554",
+    "name" : "Test defects",
+    "time" : {
+      "minDuration" : 36436,
+      "maxDuration" : 38964,
+      "sumDuration" : 75400,
+      "start" : 1642161288073,
+      "stop" : 1642161363638,
+      "duration" : 75565
+    },
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 2,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 2
+    },
+    "type" : "TestGroupNode",
+    "children" : [ {
+      "uid" : "7e80b447596215b1",
+      "name" : "expected:<...883...> but was:<...118...>",
+      "time" : {
+        "minDuration" : 38964,
+        "maxDuration" : 38964,
+        "sumDuration" : 38964,
+        "start" : 1642161288073,
+        "stop" : 1642161327037,
+        "duration" : 38964
+      },
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 1
+      },
+      "type" : "TestGroupNode",
+      "children" : [ {
+        "uid" : "7da57b253aff7051",
+        "name" : "testCase01()",
+        "time" : {
+          "start" : 1642161288073,
+          "stop" : 1642161327037,
+          "duration" : 38964
+        },
+        "status" : "broken",
+        "flaky" : false,
+        "type" : "TestCaseNode"
+      } ]
+    }, {
+      "uid" : "c019998ee94d57db",
+      "name" : "expected:<...5...> but was:<...4...>",
+      "time" : {
+        "minDuration" : 36436,
+        "maxDuration" : 36436,
+        "sumDuration" : 36436,
+        "start" : 1642161327202,
+        "stop" : 1642161363638,
+        "duration" : 36436
+      },
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 1
+      },
+      "type" : "TestGroupNode",
+      "children" : [ {
+        "uid" : "566573126c855c6f",
+        "name" : "testCase02()",
+        "time" : {
+          "start" : 1642161327202,
+          "stop" : 1642161363638,
+          "duration" : 36436
+        },
+        "status" : "broken",
+        "flaky" : false,
+        "type" : "TestCaseNode"
+      } ]
+    } ]
+  } ]
+}

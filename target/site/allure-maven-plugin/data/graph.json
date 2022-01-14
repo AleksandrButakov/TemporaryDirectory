@@ -1,31 +1,31 @@
 [ {
-  "uid" : "40478c31bc9b529f",
-  "name" : "testCase03()",
-  "time" : {
-    "start" : 1640758109042,
-    "stop" : 1640758129835,
-    "duration" : 20793
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "606f756c042535f",
+  "uid" : "7da57b253aff7051",
   "name" : "testCase01()",
   "time" : {
-    "start" : 1640758034916,
-    "stop" : 1640758074734,
-    "duration" : 39818
+    "start" : 1642161288073,
+    "stop" : 1642161327037,
+    "duration" : 38964
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "905916666fb55eac",
+  "name" : "testCase03()",
+  "time" : {
+    "start" : 1642161363644,
+    "stop" : 1642161385814,
+    "duration" : 22170
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "e5cc8d4f7d7ac077",
+  "uid" : "566573126c855c6f",
   "name" : "testCase02()",
   "time" : {
-    "start" : 1640758074881,
-    "stop" : 1640758109042,
-    "duration" : 34161
+    "start" : 1642161327202,
+    "stop" : 1642161363638,
+    "duration" : 36436
   },
-  "status" : "passed",
+  "status" : "broken",
   "severity" : "normal"
 } ]
