@@ -1,12 +1,12 @@
 {
-  "uid" : "7da57b253aff7051",
+  "uid" : "7d3943b95386bc27",
   "name" : "testCase01()",
   "fullName" : "TestTempRSHB.testCase01",
   "historyId" : "e036f5e1badf6dce1fa1bace786e300e",
   "time" : {
-    "start" : 1642161288073,
-    "stop" : 1642161327037,
-    "duration" : 38964
+    "start" : 1642352573631,
+    "stop" : 1642352614424,
+    "duration" : 40793
   },
   "status" : "broken",
   "statusDetails" : {
@@ -22,7 +22,7 @@
     "value" : "DESKTOP-ME9VRNQ"
   }, {
     "name" : "thread",
-    "value" : "924@DESKTOP-ME9VRNQ.main(1)"
+    "value" : "2984@DESKTOP-ME9VRNQ.main(1)"
   }, {
     "name" : "framework",
     "value" : "junit-platform"

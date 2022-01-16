@@ -381,7 +381,6 @@ public class TestTempRSHB {
         }
         return s1;
     }
-
     // метод ожидания видимости элемента
     public void waitElementAppear (WebElement element) {
         driverWait.until(ExpectedConditions.visibilityOf(element));

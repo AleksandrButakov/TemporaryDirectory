@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: TestTempRSHB
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 97.816 s <<< FAILURE! - in TestTempRSHB
-testCase01  Time elapsed: 39.12 s  <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 94.507 s <<< FAILURE! - in TestTempRSHB
+testCase01  Time elapsed: 40.968 s  <<< ERROR!
 junit.framework.ComparisonFailure: expected:<...883...> but was:<...118...>
 	at TestTempRSHB.testCase01(TestTempRSHB.java:146)
 
-testCase02  Time elapsed: 36.433 s  <<< ERROR!
+testCase02  Time elapsed: 32.688 s  <<< ERROR!
 junit.framework.ComparisonFailure: expected:<...5...> but was:<...4...>
 	at TestTempRSHB.testCase02(TestTempRSHB.java:262)
 
